@@ -45,7 +45,7 @@ public class LoginController {
 	public ModelAndView registration(HttpServletResponse response) throws IOException{
 		ModelAndView model=new ModelAndView("registration");
 		model.addObject("customer", new Customer());
-		return new ModelAndView("registration");
+		return model;
 	}
 	
 	@RequestMapping(value="/registration",method = RequestMethod.POST)
