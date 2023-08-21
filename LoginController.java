@@ -43,19 +43,23 @@ public class LoginController {
 	
 	@RequestMapping(value="/registration")
 	public ModelAndView registration(HttpServletResponse response) throws IOException{
+		ModelAndView model=new ModelAndView("registration");
+		model.addObject("customer", new Customer());
 		return new ModelAndView("registration");
 	}
 	
 	@RequestMapping(value="/registration",method = RequestMethod.POST)
-	public ModelAndView registrationPost(@Valid @ModelAttribute("customer") Customer theCustomer,
+	public String registrationPost(@Valid @ModelAttribute("customer") Customer theCustomer,
 			BindingResult theBindingResult) throws IOException{		
 				System.out.println(theCustomer);
 				if (theBindingResult.hasErrors()) {
 					return "registration";
 				}
-				return new ModelAndView("registration");
+				return "customer-confirmation";
 		
 	}
+	
+	
 	
 	
 
