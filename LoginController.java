@@ -3,8 +3,10 @@ package com.amdocs.controller;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,12 +47,18 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/registration",method = RequestMethod.POST)
-	public ModelAndView registrationPost(Customer theCustomer,
-			HttpServletResponse response) throws IOException{		
-				System.out.println(theCustomer);		
-			return new ModelAndView("registration");
+	public ModelAndView registrationPost(@Valid @ModelAttribute("customer") Customer theCustomer,
+			BindingResult theBindingResult) throws IOException{		
+				System.out.println(theCustomer);
+				if (theBindingResult.hasErrors()) {
+					return "registration";
+				}
+				return new ModelAndView("registration");
 		
 	}
+	
+	
+
 	
 
 }
