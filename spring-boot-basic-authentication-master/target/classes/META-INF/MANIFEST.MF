@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: admin
+Build-Jdk: 17.0.2
+Implementation-Title: spring-boot-basic-authentication
+Implementation-Version: 1.0
+Implementation-Vendor-Id: pl.rmitula
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-boot-basic-authentication
+Created-By: Maven Integration for Eclipse
+
