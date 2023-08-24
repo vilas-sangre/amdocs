@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: com.amdocs.AClassWithOneJUnitTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.14 s <<< FAILURE! - in com.amdocs.AClassWithOneJUnitTest
+initializationError(com.amdocs.AClassWithOneJUnitTest)  Time elapsed: 0.022 s  <<< ERROR!
+java.lang.Exception: The class com.amdocs.AClassWithOneJUnitTest is not public.
+
+initializationError(com.amdocs.AClassWithOneJUnitTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.Exception: Test class should have exactly one public constructor
+
+initializationError(com.amdocs.AClassWithOneJUnitTest)  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.Exception: Method demoTestMethod() should be public
+
